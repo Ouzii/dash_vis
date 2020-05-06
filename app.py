@@ -138,4 +138,4 @@ def on_data_set_graph(data, value, x, y):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run_server(debug=False, dev_tools_hot_reload=False)
