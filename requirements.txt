@@ -3,7 +3,6 @@ asn1crypto==0.24.0
 astroid==2.4.0
 attrs==19.3.0
 black==19.10b0
-Brlapi==0.6.6
 Brotli==1.0.7
 certifi==2018.1.18
 chardet==3.0.4
