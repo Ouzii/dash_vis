@@ -10,9 +10,9 @@ import flask
 
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
-server = flask.Flask(__name__)  # define flask app.server
-
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = flask.Flask(__name__)
+print(server)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets, server=server)
 df = pd.read_csv("data.csv", error_bad_lines=False, sep=";")
 avgs = (
     df.groupby("model_year")[
@@ -140,5 +140,8 @@ def on_data_set_graph(data, value, x, y):
     }
 
 
+app.config.suppress_callback_exceptions = True
+server = app.server
+
 if __name__ == "__main__":
-    app.run_server(debug=False, dev_tools_hot_reload=False)
+    app.run_server(debug=False)
