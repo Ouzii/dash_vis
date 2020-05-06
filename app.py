@@ -52,9 +52,6 @@ prettyLabels = {
     "acceleration_(0-60mph)": "Acceleration (seconds to 0-60mph)",
 }
 
-
-print(prettyLabels["weight_(kg)"])
-
 app.layout = html.Div(
     [
         dcc.Store(id="session", storage_type="session"),
@@ -141,4 +138,4 @@ def on_data_set_graph(data, value, x, y):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False)
